@@ -1,4 +1,4 @@
 module.exports = {
-    database : 'mongodb://localhost/amazono-db',
-    port : '27017'
+    database : 'mongodb://localhost/amazono',
+    port : '3030'
 }
