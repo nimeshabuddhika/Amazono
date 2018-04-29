@@ -2,6 +2,7 @@ const express = require('express');         //Web framework to create http route
 const morgan = require('morgan');           //Middle ware to log http request
 const bodyParser = require('body-parser');  //data reader, NodeJs can not communicate with front end data
 const mongoose = require('mongoose');       //data base connector of  mongodb
+const cors = require('cors');               //CORS is needed for communicating frontend and backend and it is a middleware
 
 const app = express();
 
@@ -18,6 +19,7 @@ mongoose.connect(config.database, (err) =>{
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended : false}));
 app.use(morgan('dev'));
+app.use(cors())
 
 app.get('/',(req,res,next) => {
     res.json({
